@@ -49,10 +49,6 @@
 <body>
   <div class="card">
     <h1>📱 ABHC App</h1>
-    <p>Enter OTP to unlock download</p>
-    <input type="text" id="otpInput" placeholder="Enter OTP" />
-    <br />
-    <button onclick="checkOTP()">Verify</button>
     <br />
     <a id="downloadLink" 
        href="https://github.com/Akash562/Public-APK/releases/tag/v1.0.0/app-release.apk">
@@ -60,16 +56,6 @@
     </a>
   </div>
 
-  <script>
-    function checkOTP() {
-      const otp = document.getElementById("otpInput").value;
-      if (otp === "0565") {
-        document.getElementById("downloadLink").style.display = "inline-block";
-      } else {
-        alert("❌ Invalid OTP. Try again.");
-      }
-    }
-  </script>
 </body>
 </html>
 
