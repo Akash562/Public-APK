@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Download My App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arogya Bharat Health Club</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -18,26 +18,58 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       display: inline-block;
     }
-    a.download-btn {
-      display: inline-block;
-      padding: 12px 25px;
-      margin-top: 20px;
-      background: #163b5a;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 25px;
+    input {
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 180px;
+      text-align: center;
     }
-    a.download-btn:hover {
+    button {
+      padding: 12px 25px;
+      margin-top: 15px;
+      background: #163b5a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    button:hover {
       background: #0d2a40;
+    }
+    a {
+      display: none;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #163b5a;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>📱  Public ABHC App</h1>
-    <p>Click below to download the latest version:</p>
-    <a href="https://github.com/Akash562/Public-APK/releases/tag/v1.0.0/app-release.apk" class="download-btn">⬇ Download APK</a>
+    <h1>📱 ABHC App</h1>
+    <p>Enter OTP to unlock download</p>
+    <input type="text" id="otpInput" placeholder="Enter OTP" />
+    <br />
+    <button onclick="checkOTP()">Verify</button>
+    <br />
+    <a id="downloadLink" 
+       href="https://github.com/Akash562/Public-APK/releases/tag/v1.0.0/app-release.apk">
+      ⬇ Download APK
+    </a>
   </div>
+
+  <script>
+    function checkOTP() {
+      const otp = document.getElementById("otpInput").value;
+      if (otp === "0565") {
+        document.getElementById("downloadLink").style.display = "inline-block";
+      } else {
+        alert("❌ Invalid OTP. Try again.");
+      }
+    }
+  </script>
 </body>
 </html>
+
